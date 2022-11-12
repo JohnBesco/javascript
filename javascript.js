@@ -3,7 +3,7 @@ function displayMessage() {
   const body = document.body;
 
   const panel = document.createElement('div');
-  panel.setAttribute('class', 'msgBox');
+  panel.setAttribute('class','msgBox');
   body.appendChild(panel);
 
   const msg = document.createElement('p');
@@ -15,5 +15,7 @@ function displayMessage() {
   panel.appendChild(closeBtn);
 
   closeBtn.addEventListener('click', () => panel.parentNode.removeChild(panel));
+
+  displayMessage();
 
 }
