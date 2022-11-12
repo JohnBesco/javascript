@@ -14,6 +14,6 @@ function displayMessage() {
   closeBtn.textContent = 'x';
   panel.appendChild(closeBtn);
 
-  
+  closeBtn.addEventListener('click', () => panel.parentNode.removeChild(panel));
 
 }
