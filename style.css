@@ -1,12 +1,27 @@
 body {
     background-color: black;
 }
+.msgBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 200px;
+    background: #eee;
+  }
 
-p {
-    color: purple;
-    margin: 0.5em 0;
-}
+  .msgBox p {
+    line-height: 1.5;
+    padding: 10px 20px;
+    color: #333;
+  }
 
-* {
-    box-sizing: border-box;
-}
+  .msgBox button {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.1rem;
+    color: #aaa;
+  }
