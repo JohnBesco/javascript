@@ -2,58 +2,39 @@
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Function library example</title>
-  <style>
-    input {
-      font-size: 2em;
-      margin: 10px 1px 0;
-    }
-
-    body {
-        background-color: aquamarine;
-    }
-  </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple DOM example</title>
   </head>
-<body>
+  <body>
+      <section>
+        <img src="assets/dinosaur.png" alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth.">
+        <p>Here we will add a link to the <a href="https://www.mozilla.org/">Mozilla homepage</a></p>
+      </section>
 
-  <input class="numberInput" type="text">
-  <p></p>
+      <script>
+        const link = document.querySelector('a');
 
-  <script>
-    const input = document.querySelector('.numberInput');
-    const para = document.querySelector('p');
+        link.textContent = 'Mozilla Developer Network';
+        link.href = 'https://developer.mozilla.org';
 
-    function squared(num) {
-        return num * num;
-    }
+        const sect = document.querySelector('section');
+        const para = document.createElement('p');
+        para.textContent = 'We hope you enjoyed the ride';
 
-    function cubed (num) {
-        return num * num * num;
-    }
-    
-    function factorial(num) { 
-        if (num < 0) return undefined;
-        if (num === 0) return 1;
-        let x = num - 1;
-        while (x > 1 ) {
-            num *= x;
-            x--;
-        }
-        return num;
-    }
+        sect.appendChild(para);
 
-    input.addEventListener("change", () => {
-        const num = parseFloat(input.value);
-        if (isNaN(num)) {
-            para.textContent = "You need to enter a number!";
-        } else {
-            para.textContent = `${num} squared is ${squared(num)}. `;
-            para.textContent += `${num} cubed is ${cubed(num)}. `;
-            para.textContent += `${num} factorial is ${factorial(num)}. `
-        }
-    });
+        const text = document.createTextNode(' - the premier source for web development knowledge.');
 
-  </script>
-</body>
+        const linkPara = document.querySelector('p');
+        linkPara.appendChild(text);
+        linkPara.parentNode.removeChild(linkPara);
+
+        para.style.color = 'white';
+        para.style.backgroundColor = 'black';
+        para.style.padding = '10px';
+        para.style.width = '250px';
+        para.style.textAlign = 'center';
+
+      </script>
+  </body>
 </html>
