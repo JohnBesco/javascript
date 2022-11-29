@@ -13,33 +13,13 @@
   </head>
 <body>
 
-  <input class="numberInput" type="text">
-  <p></p>
-
-  <script>
-    const input = document.querySelector('.numberInput');
-    const para = document.querySelector('p');
-
-    function squared(num) {
-      return num * num;
+  <script> 
+  
+    function add7 (number) {
+      return number + 7;
     }
 
-    function cubed(num) {
-      return num * num * num;
-    }
-
-    function factorial(num) {
-      if (num < 0) return undefined;
-      if (num === 0) return 1;
-      let x = num - 1;
-      while (x > 1) {
-      num *= x;
-      x--;
-    }
-      return num;
-    }
-
-
+    console.log(add7(7));
   </script>
 </body>
 </html>
